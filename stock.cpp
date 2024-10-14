@@ -9,6 +9,14 @@ Stock::Stock(int count)
         mas[i] = {};
 }
 
+Stock::Stock()
+{
+    cnt = 0;
+    mas = new Course[0];
+    for (int i=0; i<cnt; i++)
+        mas[i] = {};
+}
+
 // Деструктор
 Stock::~Stock()
 {
@@ -116,7 +124,7 @@ void Stock::print_exp()
             }
     }
     else
-        std::cout << "\tДоллара в выборке нет, сравнение невозможно" << endl;
+        std::cout << "\nДоллара в выборке нет, сравнение невозможно" << endl;
 }
 
 int Stock::get_cnt()

@@ -15,6 +15,7 @@ class Stock
 
     public:
         Stock(int);
+        Stock();
         ~Stock();
 
         void add(Course _course);
