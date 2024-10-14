@@ -63,7 +63,16 @@ int main()
         }
         else if (command == "help")
         {
-            cout << "Список доступных комманд:\n add - добавить в контейнер\n pop - убрать из контейнера\n get_from_file - ввести несколько из файла (перезапись)\n save_to_file - сохранить всё в файл\n print_all - вывести все\n print_exp - вывести те, которые дороже доллара\n get_cnt - получить количество\n help - список команд\n exit - выход\n" << endl; 
+            cout << "Список доступных комманд: " << endl;
+            cout << "add - добавить в контейнер" << endl;
+            cout << "pop - убрать из контейнера" << endl;
+            cout << "get_from_file - ввести несколько из файла (перезапись)" << endl;
+            cout << "save_to_file - сохранить всё в файл" << endl;
+            cout << "print_all - вывести все" << endl;
+            cout << "print_exp - вывести те, которые дороже доллара" << endl;
+            cout << "get_cnt - получить количество" << endl;
+            cout << "help - список команд" << endl;
+            cout << "exit - выход" << endl; 
         }
         else if (command == "exit")
         {
