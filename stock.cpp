@@ -31,16 +31,12 @@ void Stock::add(Course _course)
 
 void Stock::pop(int index)
 {
+    int old_cnt = cnt;
     cnt--;
     Course* new_mas = new Course[cnt];
     
-    // ВОТ ЗДЕСЬ У МЕНЯ ВСЁ ЛОМАЕТСЯ
-    for (int i=0, j=0; i<cnt; i++)
-        if (j == index)
-        {
-
-        }
-        else if (j != index)
+    for (int i=0, j=0; i<old_cnt; i++)
+        if (i != index)
         {
             new_mas[j] = mas[i];
             j++;
