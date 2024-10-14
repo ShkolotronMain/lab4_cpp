@@ -34,6 +34,7 @@ void Stock::pop(int index)
     cnt--;
     Course* new_mas = new Course[cnt];
     
+    // ВОТ ЗДЕСЬ У МЕНЯ ВСЁ ЛОМАЕТСЯ
     for (int i=0, j=0; i<cnt; i++)
         if (j != index)
         {
