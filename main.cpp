@@ -1,6 +1,6 @@
 #include <iostream>
-#include "stock.h"
-#include "course.h"
+#include "stock.hpp"
+#include "course.hpp"
 
 using namespace std;
 
@@ -33,7 +33,7 @@ int main()
             else
                 cout << "Элемент с данным индексом отсутствует" << endl;
         }
-        else if (command == "get_from_file")
+        else if (command == "read_from_txt")
         {
             string path;
             cout << "Введите путь к файлу" << endl;
@@ -41,13 +41,29 @@ int main()
 
             obj.get_from_file(path);
         }
-        else if (command == "save_to_file")
+        else if (command == "write_to_txt")
         {
             string path;
             cout << "Введите путь к файлу" << endl;
             cin >> path;
 
             obj.save_to_file(path);
+        }
+        else if (command == "read_from_json")
+        {
+            string path;
+            cout << "Введите путь к файлу" << endl;
+            cin >> path;
+
+            obj.read_from_json(path);
+        }
+        else if (command == "write_to_json")
+        {
+            string path;
+            cout << "Введите путь к файлу" << endl;
+            cin >> path;
+
+            obj.write_to_json(path);
         }
         else if (command == "print_all")
         {
@@ -66,8 +82,10 @@ int main()
             cout << "Список доступных комманд: " << endl;
             cout << "add - добавить в контейнер" << endl;
             cout << "pop - убрать из контейнера" << endl;
-            cout << "get_from_file - ввести несколько из файла (перезапись)" << endl;
-            cout << "save_to_file - сохранить всё в файл" << endl;
+            cout << "read_from_txt - ввести несколько из TXT (перезапись)" << endl;
+            cout << "write_to_txt - сохранить всё в TXT" << endl;
+            cout << "read_from_json - ввести несколько из JSON (перезапись)" << endl;
+            cout << "write_to_json - сохранить всё в JSON" << endl;
             cout << "print_all - вывести все" << endl;
             cout << "print_exp - вывести те, которые дороже доллара" << endl;
             cout << "get_cnt - получить количество" << endl;

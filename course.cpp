@@ -1,9 +1,20 @@
 #include <iostream>
-#include "course.h"
+#include "course.hpp"
+#include "libraries/json.hpp"
 
 Course::Course()
 {
 
+}
+
+Course::Course(string cur, string stat, string cod, string sub, int frac, double rat)
+{
+    currency = cur;
+    state = stat;
+    code = cod;
+    subunit = sub;
+    fraction = frac;
+    rate = rat;
 }
 
 Course::~Course()
@@ -66,9 +77,29 @@ void Course::write_to_file(ofstream& fp)
     fp << rate << endl;
 }
 
+string Course::get_currency()
+{
+    return currency;
+}
+
+string Course::get_state()
+{
+    return state;
+}
+
+string Course::get_subunit()
+{
+    return subunit;
+}
+
 string Course::get_code()
 {
     return code;
+}
+
+int Course::get_fraction()
+{
+    return fraction;
 }
 
 double Course::get_rate()

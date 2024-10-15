@@ -1,0 +1,61 @@
+{
+    "count": 7,
+    "values": [
+        {
+            "code": "USD",
+            "currency": "Доллар США",
+            "fraction": 100,
+            "rate": 89.8225,
+            "state": "Соединённые Штаты Америки",
+            "subunit": "Цент"
+        },
+        {
+            "code": "AZN",
+            "currency": "Азербайджанский манат",
+            "fraction": 100,
+            "rate": 52.8368,
+            "state": "Азербайджан",
+            "subunit": "Гяпик"
+        },
+        {
+            "code": "CNY",
+            "currency": "Китайский юань",
+            "fraction": 100,
+            "rate": 12.5387,
+            "state": "Китай",
+            "subunit": "Фынь"
+        },
+        {
+            "code": "GBP",
+            "currency": "Фунт стерлингов Соединенного королевства",
+            "fraction": 100,
+            "rate": 118.1884,
+            "state": "Великобритания",
+            "subunit": "Пенни"
+        },
+        {
+            "code": "EUR",
+            "currency": "Евро",
+            "fraction": 100,
+            "rate": 99.7156,
+            "state": "Европейский Союз",
+            "subunit": "Цент"
+        },
+        {
+            "code": "TJS",
+            "currency": "Таджикский сомони",
+            "fraction": 100,
+            "rate": 8.42723,
+            "state": "Таджикистан",
+            "subunit": "Дирам"
+        },
+        {
+            "code": "DKK",
+            "currency": "Датская крона",
+            "fraction": 100,
+            "rate": 13.3595,
+            "state": "Дания",
+            "subunit": "Эре"
+        }
+    ]
+}

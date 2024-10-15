@@ -1,4 +1,7 @@
-#include "stock.h"
+#include "stock.hpp"
+#include "libraries/json.hpp"
+
+using namespace nlohmann;
 
 // Конструктор
 Stock::Stock(int count)
@@ -13,8 +16,6 @@ Stock::Stock()
 {
     cnt = 0;
     mas = new Course[0];
-    for (int i=0; i<cnt; i++)
-        mas[i] = {};
 }
 
 // Деструктор
@@ -75,7 +76,7 @@ void Stock::get_from_file(string path)
             mas[i].read_from_file(inp);
     }
     else
-        cout << "Заданного файла не существует" << endl;
+       cerr << "Заданного файла не существует" << endl;
 }
 
 void Stock::save_to_file(string path)
@@ -130,4 +131,73 @@ void Stock::print_exp()
 int Stock::get_cnt()
 {
     return cnt;
+}
+
+// ДОДЕЛАТЬ
+void Stock::read_from_json(string path)
+{
+    json file;
+
+    ifstream in(path);
+    if (in.is_open())
+    {
+
+        in >> file;
+        cout << "Файл прочитан" << endl;
+        in.close();
+
+        int old_cnt = cnt;
+        cnt = file["count"];
+
+        Course* new_mas = new Course[cnt];
+        delete[] mas;
+        mas = new_mas;
+
+        for (int i=0; i<cnt; i++)
+        {
+            auto value = file["values"][i];
+            Course tmp = Course(
+                value["currency"],
+                value["state"], 
+                value["rate"], 
+                value["subunit"], 
+                value["fraction"], 
+                value["rate"]);
+            mas[i] = tmp;
+        }
+    }
+    else
+    {
+        cerr << "Ошибка открытия файла" << endl;
+    }
+}
+
+void Stock::write_to_json(string path)
+{
+    json file;
+
+    file["count"] = cnt;
+
+    for (int i=0; i<cnt; i++)
+    {
+        json value;
+        value["currency"] = mas[i].get_currency();
+        value["state"] = mas[i].get_state();
+        value["code"] = mas[i].get_code();
+        value["subunit"] = mas[i].get_subunit();
+        value["fraction"] = mas[i].get_fraction();
+        value["rate"] = mas[i].get_rate();
+        file["values"].push_back(value);
+    }
+
+    ofstream out(path);
+    if (out.is_open())
+    {
+        out << file.dump(4);
+        cout << "Файл записан" << endl;
+    }
+    else
+    {
+        cerr << "Ошибка открытия файла" << endl;
+    }
 }

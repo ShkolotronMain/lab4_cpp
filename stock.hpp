@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "course.h"
+#include "course.hpp"
 
 #ifndef STOCK_H
 #define STOCK_H
@@ -23,6 +23,9 @@ class Stock
 
         void get_from_file(string path);
         void save_to_file(string path);
+
+        void read_from_json(string path);
+        void write_to_json(string path);
 
         void print_all();
         void print_exp();
