@@ -133,7 +133,6 @@ int Stock::get_cnt()
     return cnt;
 }
 
-// ДОДЕЛАТЬ
 void Stock::read_from_json(string path)
 {
     json file;
@@ -156,13 +155,14 @@ void Stock::read_from_json(string path)
         for (int i=0; i<cnt; i++)
         {
             auto value = file["values"][i];
-            Course tmp = Course(
-                value["currency"],
-                value["state"], 
-                value["rate"], 
-                value["subunit"], 
-                value["fraction"], 
-                value["rate"]);
+            Course tmp = Course();
+
+            tmp.set_currency(value["currency"]);
+            tmp.set_state(value["state"]);
+            tmp.set_code(value["code"]);
+            tmp.set_subunit(value["subunit"]);
+            tmp.set_fraction(value["fraction"]);
+            tmp.set_rate(value["rate"]);
             mas[i] = tmp;
         }
     }

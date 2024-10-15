@@ -7,16 +7,6 @@ Course::Course()
 
 }
 
-Course::Course(string cur, string stat, string cod, string sub, int frac, double rat)
-{
-    currency = cur;
-    state = stat;
-    code = cod;
-    subunit = sub;
-    fraction = frac;
-    rate = rat;
-}
-
 Course::~Course()
 {
 
@@ -105,4 +95,34 @@ int Course::get_fraction()
 double Course::get_rate()
 {
     return rate;
+}
+
+void Course::set_currency(string cur)
+{
+    currency = cur;
+}
+
+void Course::set_state(string stat)
+{
+    state = stat;
+}
+
+void Course::set_code(string cod)
+{
+    code = cod;
+}
+
+void Course::set_subunit(string sub)
+{
+    subunit = sub;
+}
+
+void Course::set_fraction(int frac)
+{
+    fraction = frac;
+}
+
+void Course::set_rate(double rat)
+{
+    rate = rat;
 }

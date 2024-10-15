@@ -18,7 +18,6 @@ class Course
 
     public:
         Course();
-        Course(string, string, string, string, int, double);
         ~Course();
 
         void read_from_file(ifstream& fp);
@@ -33,6 +32,13 @@ class Course
         string get_subunit();
         int get_fraction();
         double get_rate();
+
+        void set_currency(string cur);
+        void set_state(string stat);
+        void set_code(string cod);
+        void set_subunit(string sub);
+        void set_fraction(int frac);
+        void set_rate(double rat);
 };
 
 #endif
