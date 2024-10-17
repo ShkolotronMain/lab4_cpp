@@ -154,7 +154,7 @@ void Stock::read_from_json(string path)
 
         for (int i=0; i<cnt; i++)
         {
-            auto value = file["values"][i];
+            json value = file["values"][i];
             Course tmp = Course();
 
             tmp.set_currency(value["currency"]);

@@ -21,6 +21,7 @@ int main()
             Course nc = Course();
             nc.read_from_console();
             obj.add(nc);
+            cout << endl;
         }
         else if (command == "pop")
         {
@@ -29,7 +30,10 @@ int main()
             cout << "Введите индекс удаляемого элемента: ";
             cin >> c;
             if (c>=0 && c<count)
+            {
                 obj.pop(c);
+                cout << endl;
+            }
             else
                 cout << "Элемент с данным индексом отсутствует" << endl;
         }
@@ -40,6 +44,8 @@ int main()
             cin >> path;
 
             obj.get_from_file(path);
+
+            cout << endl;
         }
         else if (command == "write_to_txt")
         {
@@ -48,6 +54,8 @@ int main()
             cin >> path;
 
             obj.save_to_file(path);
+
+            cout << endl;
         }
         else if (command == "read_from_json")
         {
@@ -56,6 +64,8 @@ int main()
             cin >> path;
 
             obj.read_from_json(path);
+
+            cout << endl;
         }
         else if (command == "write_to_json")
         {
@@ -64,14 +74,18 @@ int main()
             cin >> path;
 
             obj.write_to_json(path);
+
+            cout << endl;
         }
         else if (command == "print_all")
         {
             obj.print_all();
+            cout << endl;
         }
         else if (command == "print_exp")
         {
             obj.print_exp();
+            cout << endl;
         }
         else if (command == "get_cnt")
         {
