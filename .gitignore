@@ -33,7 +33,9 @@
 
 .vscode/
 *.png
+*.svg
 libraries/
 *.md
-*.txt
 *.json
+*.txt
+build/

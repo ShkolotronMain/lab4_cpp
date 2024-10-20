@@ -20,11 +20,11 @@ class Course
         Course();
         ~Course();
 
-        void read_from_file(ifstream& fp);
+        void read_from_file(ifstream&);
         void read_from_console();
 
         void print();
-        void write_to_file(ofstream& fp);
+        void write_to_file(ofstream&);
 
         string get_currency();
         string get_state();
@@ -33,12 +33,12 @@ class Course
         int get_fraction();
         double get_rate();
 
-        void set_currency(string cur);
-        void set_state(string stat);
-        void set_code(string cod);
-        void set_subunit(string sub);
-        void set_fraction(int frac);
-        void set_rate(double rat);
+        void set_currency(string);
+        void set_state(string);
+        void set_code(string);
+        void set_subunit(string);
+        void set_fraction(int);
+        void set_rate(double);
 };
 
 #endif

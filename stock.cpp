@@ -96,6 +96,14 @@ void Stock::print_all()
         mas[i].print();
 }
 
+void Stock::print(int i)
+{
+    if (i >= 0 && i < cnt)
+        mas[i].print();
+    else
+        cerr << "Элемента с нужным индексом не существует" << endl;
+}
+
 double Stock::diff(Course left, Course right)
 {
     return (left.get_rate() - right.get_rate());
@@ -125,7 +133,7 @@ void Stock::print_exp()
             }
     }
     else
-        std::cout << "\nДоллара в выборке нет, сравнение невозможно" << endl;
+        std::cerr << "\nДоллара в выборке нет, сравнение невозможно" << endl;
 }
 
 int Stock::get_cnt()

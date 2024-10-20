@@ -82,6 +82,14 @@ int main()
             obj.print_all();
             cout << endl;
         }
+        else if (command == "print")
+        {
+            int c;
+            cout << "Введите индекс элемента для вывода: ";
+            cin >> c;
+            obj.print(c);
+            cout << endl;
+        }
         else if (command == "print_exp")
         {
             obj.print_exp();
@@ -101,10 +109,11 @@ int main()
             cout << "read_from_json - ввести несколько из JSON (перезапись)" << endl;
             cout << "write_to_json - сохранить всё в JSON" << endl;
             cout << "print_all - вывести все" << endl;
+            cout << "print - вывести конкретный элемент" << endl;
             cout << "print_exp - вывести те, которые дороже доллара" << endl;
             cout << "get_cnt - получить количество" << endl;
             cout << "help - список команд" << endl;
-            cout << "exit - выход" << endl; 
+            cout << "exit - выход" << endl << endl; 
         }
         else if (command == "exit")
         {
